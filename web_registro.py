@@ -1,7 +1,6 @@
 from supabase import create_client, Client
 import qrcode
 import streamlit as st
-import cv2
 import numpy as np
 
 # 1. Datos de conexión
@@ -65,4 +64,5 @@ if st.button("Registrar Invitado"):
         #elif continuar != 's':
         #    st.text("Entrada no válida. Saliendo del programa.")
         #    break '''
+
         
