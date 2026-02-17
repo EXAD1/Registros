@@ -39,8 +39,20 @@ if st.button("Registrar Invitado"):
         "ingresado": False
     }
 
+
+
     imagen = qrcode.make(tok)
-    imagen.save(f"pase_{nom_inv}.png")
+    file_name = f"pase_{nom_inv}.png"
+    
+    imagen.save(file_name)
+    
+    with open(file_name, "rb") as file:
+        st.download_button(
+            label="📥 Descargar pase QR",
+            data=file,
+            file_name=file_name,
+            mime="image/png"
+        )
 
     # 4. El envío
     st.text("🚀 Conectando con la nube estable...")
@@ -66,3 +78,4 @@ if st.button("Registrar Invitado"):
         #    break '''
 
         
+
